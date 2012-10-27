@@ -14,10 +14,12 @@
 var modal = {
     
     init: function(){
+        _this = this;
         $('body').append('<div id="modal-overlay"></div><div id="modal"><div id="modal-content"></div></div>');
     },
     
     open: function(width,url){
+        _this = this;
         $('#modal-content')
             .load(url, function () {
             $('#modal')
@@ -28,6 +30,13 @@ var modal = {
             });
             $('#modal,#modal-overlay')
                 .fadeIn(300);
+        });
+        // Escape key
+        $(document).keydown(function(e){
+           var code = e.keyCode ? e.keyCode : e.which;
+           if(code==27){
+               _this.close();
+           }
         });
     },
     
