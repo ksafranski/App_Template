@@ -52,6 +52,7 @@ var alert = {
             .css({
             'top': '-' + a_height + 'px'
         })
+            .stop()
             .show()
             .animate({
             'top': '0',
