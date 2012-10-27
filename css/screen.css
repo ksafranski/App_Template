@@ -59,7 +59,7 @@
         text-decoration: none;
         padding: 2px 5px 3px 5px;
         color: #333;
-        background: #cbcad1;
+        background-color: #cbcad1;
         border-radius: 3px;
         transition: background-color 300ms linear;
     }
@@ -100,6 +100,9 @@
         border-radius: 0px 0px 10px 10px;
         box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, .6);
     }
+    
+    #alert-close { float: right; background-color: transparent; color: #fff; font-weight: bold; text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); line-height: 100%; font-size: 220%; margin: -7px 5px 0 10px; padding: 0; opacity: 0.5; }
+    #alert-close:hover { background-color: transparent; opacity: 0.9; }
     .error { background: #b50909; border: 3px solid #ff0000; border-top: none; }
     .success { background: #0cb309; border: 3px solid #4dff00; border-top: none; }
      

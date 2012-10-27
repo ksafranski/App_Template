@@ -1,5 +1,12 @@
 /////////////////////////////////////////////
+// 
 // ALERT
+//
+// alert.{type}({message});
+//
+//   {type} = 'success' or 'error'
+//   {message} = Output
+//
 /////////////////////////////////////////////
 
 alert_hider = null;
@@ -8,14 +15,17 @@ var alert = {
     timer: 3000,
     
     init: function(){
-        $('body').append('<div id="alert"></div>');  
+        _this = this;
+        $('body').append('<div id="alert"><a id="alert-close" class="icon">[</a><div id="alert-content"></div></div>');
+        $('#alert-close').on('click',function(){ _this.hide(); });
     },
 
     success: function (m, callback) {
         $('#alert')
-            .html(m)
             .removeClass()
             .addClass('success');
+        $('#alert-content')
+            .html(m);
         alert.show();
         if (callback && typeof (callback) === 'function') {
             callback();
@@ -24,9 +34,10 @@ var alert = {
 
     error: function (m, callback) {
         $('#alert')
-            .html(m)
             .removeClass()
             .addClass('error');
+        $('#alert-content')
+            .html(m);
         alert.show();
         if (callback && typeof (callback) === 'function') {
             callback();
@@ -48,7 +59,7 @@ var alert = {
         }, 300);
         alert_hider = setTimeout(function () {
             alert.hide();
-        }, 3000);
+        }, this.timer);
     },
 
     hide: function () {

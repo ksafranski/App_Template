@@ -1,5 +1,14 @@
 /////////////////////////////////////////////
+//
 // MODAL
+//
+// modal.open({width},{url});
+//
+//   {width} = width in pixels (num)
+//   {url} = file/path to load into modal
+//
+// modal.close();
+//
 /////////////////////////////////////////////
 
 var modal = {
