@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# APP Template
-=======
-App_Template
-============
+# App Template
 
-Simple Template for JS Apps
->>>>>>> 69a4dfa589399bc59bdceb66d0fef5e324678070
+Just a simple framework to allow me a solid jump-off for starting a JS App.
