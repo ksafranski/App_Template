@@ -16,8 +16,7 @@ var alert = {
     
     init: function(){
         _this = this;
-        $('body').append('<div id="alert"><a id="alert-close" class="icon">[</a><div id="alert-content"></div></div>');
-        $('#alert-close').on('click',function(){ _this.hide(); });
+        $('body').append('<div id="alert"><a id="alert-close" onclick="alert.hide();" class="icon">[</a><div id="alert-content"></div></div>');
     },
 
     success: function (m, callback) {
