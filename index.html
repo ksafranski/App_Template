@@ -8,13 +8,7 @@
   </head>
   <body>
   
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/css3finalize/3.1/jquery.css3finalize.min.js"></script>
-    <script src="js/placeholder.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/alert.js"></script>
+    <script src="js/libs/require.2.1.1.js" data-main="js/main"></script>
     
     <h1>This is my page</h1>
     
@@ -95,17 +89,17 @@
     
     <h2>Simple JS Components</h2>
     
-    <button onclick="modal.open(500,'modal-content.html');">Open Modal</button>
+    <button class="demo-modal">Open Modal</button>
     
     <pre>modal.open(500,'modal-content.html');</pre>
     
-    <button onclick="alert.success('This Is A Success Message');">Success Message</button>
+    <button class="demo-alerts-success">Success Message</button>
     
-    <pre>alert.success('This Is A Success Message');</pre>
+    <pre>alerts.success('This Is A Success Message');</pre>
     
-    <button onclick="alert.error('This Is An Error Message');">Error Message</button>
+    <button class="demo-alerts-error">Error Message</button>
     
-    <pre>alert.error('This Is An Error Message');</pre>
+    <pre>alerts.error('This Is An Error Message');</pre>
     
     <hr>
     
