@@ -9,17 +9,18 @@
 //
 /////////////////////////////////////////////
 
-alert_hider = null;
 var alert = {
 
+    alert_hider: null,
     timer: 3000,
+    template: '<div id="alert">'
+                + '<a id="alert-close" onclick="alert.hide();" class="icon-remove-sign"></a>'
+                + '<div id="alert-content"></div>'
+               +'</div>',
     
-    init: function(){
-        _this = this;
-        $('body').append('<div id="alert"><a id="alert-close" onclick="alert.hide();" class="icon">[</a><div id="alert-content"></div></div>');
-    },
 
     success: function (m, callback) {
+        $('body').append(this.template);
         $('#alert')
             .removeClass()
             .addClass('success');
@@ -32,6 +33,7 @@ var alert = {
     },
 
     error: function (m, callback) {
+        $('body').append(this.template);
         $('#alert')
             .removeClass()
             .addClass('error');
@@ -44,7 +46,7 @@ var alert = {
     },
 
     show: function () {
-        clearTimeout(alert_hider);
+        clearTimeout(this.alert_hider);
         var a_height = $('#alert')
             .outerHeight();
         $('#alert')
@@ -57,7 +59,7 @@ var alert = {
             'top': '0',
             'opacity': 1
         }, 300);
-        alert_hider = setTimeout(function () {
+        this.alert_hider = setTimeout(function () {
             alert.hide();
         }, this.timer);
     },
@@ -70,9 +72,9 @@ var alert = {
             'top': '-' + a_height + 'px',
             'opacity': 0
         }, 300)
-            .fadeOut(300);
+            .fadeOut(300,function () {
+                $('#alert').remove();
+            });
     }
 
 };
-
-$(function(){ alert.init(); });

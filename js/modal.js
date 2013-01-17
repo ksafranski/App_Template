@@ -13,13 +13,14 @@
 
 var modal = {
     
-    init: function(){
-        _this = this;
-        $('body').append('<div id="modal-overlay"></div><div id="modal"><div id="modal-content"></div></div>');
-    },
+    template: '<div id="modal-overlay"></div>'
+            + '<div id="modal">'
+                + '<div id="modal-content"></div>'
+            + '</div>',
     
     open: function(width,url){
         _this = this;
+        $('body').append(_this.template);
         $('#modal-content')
             .load(url, function () {
             $('#modal')
@@ -42,9 +43,9 @@ var modal = {
     
     close: function(){
         $('#modal,#modal-overlay')
-            .fadeOut(300);
+            .fadeOut(300,function (){
+                $('#modal,#modal-overlay').remove();
+            });
     }
     
 };
-
-$(function(){ modal.init(); });
